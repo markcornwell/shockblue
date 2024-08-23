@@ -1,0 +1,61 @@
+name:                gloss-sdl-example
+version:             0.1.0.0
+github:              "markcornwell/gloss-sdl-example"
+license:             BSD-3-Clause
+author:              "Mark R Cornwell"
+maintainer:          "mark@cornwellgamelab.com"
+copyright:           "Copyright (c) 2022 by Mark R. Cornwell, All Rights Reserved"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Unknown
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/markcornwell/gloss-sdl-example#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- gloss
+- sdl2 >= 2.5
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+executables:
+  gloss-sdl-example-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - gloss-sdl-example
+
+tests:
+  gloss-sdl-example-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - gloss-sdl-example
